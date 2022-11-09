@@ -8,6 +8,7 @@ import {
   useFocusIdx,
   BlockAvatarWrapper,
   useFocusBlockLayout,
+  useEditorProps,
 } from 'easy-email-editor';
 import { Toolbar } from './Toolbar';
 
@@ -16,6 +17,7 @@ export function FocusTooltip() {
   const { focusIdx } = useFocusIdx();
   const { focusBlockNode } = useFocusBlockLayout();
   const isPage = focusBlock?.type === BasicType.PAGE;
+  const editorProps = useEditorProps();
 
   if (!focusBlockNode || !focusBlock) return null;
 
@@ -42,46 +44,48 @@ export function FocusTooltip() {
 
             `}
           </style>
-          <div
-            style={{
-              position: 'absolute',
-              zIndex: 9999,
-              right: 0,
-              top: '50%',
-              display: isPage ? 'none' : undefined,
-            }}
-          >
-            <BlockAvatarWrapper
-              idx={focusIdx}
-              type={focusBlock.type}
-              action='move'
+          { !editorProps.disableBlockOptions && !focusBlock.disableBlockOptions && (
+            <div
+              style={{
+                position: 'absolute',
+                zIndex: 9999,
+                right: 0,
+                top: '50%',
+                display: isPage ? 'none' : undefined,
+              }}
             >
-              <div
-                style={
-                  {
-                    position: 'absolute',
-                    backgroundColor: 'var(--selected-color)',
-                    color: '#ffffff',
-                    height: '28px',
-                    width: '28px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transform: 'translate(-50%, -50%)',
-                    borderRadius: '50%',
-                    cursor: 'grab',
-                    pointerEvents: 'auto',
-                    WebkitUserDrag: 'element',
-                  } as any
-                }
+              <BlockAvatarWrapper
+                idx={focusIdx}
+                type={focusBlock.type}
+                action='move'
               >
-                <IconFont
-                  iconName='icon-move'
-                  style={{ color: '#fff', cursor: 'grab' }}
-                />
-              </div>
-            </BlockAvatarWrapper>
-          </div>
+                <div
+                  style={
+                    {
+                      position: 'absolute',
+                      backgroundColor: 'var(--selected-color)',
+                      color: '#ffffff',
+                      height: '28px',
+                      width: '28px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transform: 'translate(-50%, -50%)',
+                      borderRadius: '50%',
+                      cursor: 'grab',
+                      pointerEvents: 'auto',
+                      WebkitUserDrag: 'element',
+                    } as any
+                  }
+                >
+                  <IconFont
+                    iconName='icon-move'
+                    style={{ color: '#fff', cursor: 'grab' }}
+                  />
+                </div>
+              </BlockAvatarWrapper>
+            </div>
+          )}
 
           {/* outline */}
           <div
