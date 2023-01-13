@@ -25,6 +25,7 @@ export enum BasicType {
   TABLE = 'table',
 
   TEMPLATE = 'template',
+  CUSTOM_TEXT = 'custom-text',
 }
 
 // 高级组件

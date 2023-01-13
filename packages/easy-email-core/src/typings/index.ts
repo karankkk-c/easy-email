@@ -32,7 +32,7 @@ export interface IBlockData<
     value: Data;
     hidden?: boolean | string;
   };
-  attributes: Attr & { 'css-class'?: string };
+  attributes: Attr & { 'css-class'?: string, 'renderInEditor'?: boolean };
   children: IBlockData[];
   disableBlockOptions?: boolean;
 }

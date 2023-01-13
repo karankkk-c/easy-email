@@ -5,6 +5,7 @@ import { createBlock } from '@core/utils/createBlock';
 import { merge } from 'lodash';
 import { getAdapterAttributesString } from '@core/utils';
 import { BasicBlock } from '@core/components/BasicBlock';
+import { Liquid } from 'liquidjs';
 
 export type IRaw = IBlockData<{}, { content: string }>;
 
@@ -33,12 +34,17 @@ export const Raw = createBlock<IRaw>({
     BasicType.HERO,
   ],
   render(params) {
+    let data = params.data.data.value.content;
+    if (params.data.attributes.renderInEditor) {
+      const engine = new Liquid();
+      data = engine.parseAndRenderSync(data, params.dataSource);
+    }
     return (
       <BasicBlock
         params={params}
         tag='mj-raw'
       >
-        {params.data.data.value.content}
+        {data}
       </BasicBlock>
     );
   },
