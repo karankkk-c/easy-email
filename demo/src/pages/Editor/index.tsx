@@ -482,6 +482,7 @@ export default function Editor() {
                 showLayersTab={true}
                 compact={!smallScene}
                 categories={defaultCategories}
+                showConfigurationsPanel={true}
               >
                 <EmailEditor />
               </StandardLayout>
