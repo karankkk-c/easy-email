@@ -32,7 +32,7 @@ export type ICustomText = IBlockData<
 >;
 
 export const CustomText = createBlock<ICustomText>({
-  name: 'Text',
+  name: 'Editable Text',
   type: BasicType.CUSTOM_TEXT,
   create: (payload) => {
     const defaultData: ICustomText = {
