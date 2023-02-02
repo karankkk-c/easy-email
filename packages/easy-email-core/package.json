@@ -24,7 +24,7 @@
     "block": "ts-node -r tsconfig-paths/register scripts/generateBlockJSX.ts",
     "format": "eslint --fix  --ext .tsx,.ts src/",
     "test": "jest  --coverage",
-    "prepare": "yarn build"
+    "pack": "yarn pack"
   },
   "husky": {
     "hooks": {

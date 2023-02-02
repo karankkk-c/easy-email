@@ -21,7 +21,7 @@
     "typings": "tsc --declaration --emitDeclarationOnly --project tsconfig.lib.json && tsc-alias -p tsconfig.alias.json",
     "build": "rimraf lib && npm run typings && vite build --config vite.config.ts",
     "format": "eslint --fix  --ext .tsx,.ts src/",
-    "prepare": "yarn build"
+    "pack": "yarn pack"
   },
   "husky": {
     "hooks": {
