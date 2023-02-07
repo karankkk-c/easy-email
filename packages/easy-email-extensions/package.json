@@ -51,8 +51,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "lerna": "^4.0.0",
     "less": "^4.1.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-final-form": "^6.5.7",
     "rollup-plugin-visualizer": "^5.5.2",
     "sass": "^1.43.4",
@@ -85,8 +85,8 @@
   "peerDependencies": {
     "easy-email-core": "^4.3.6",
     "easy-email-editor": "^4.3.6",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-final-form": "^6.5.7"
   },
   "gitHead": "bb5757eb3146f55c31d4354f1480939c3af8efe1"

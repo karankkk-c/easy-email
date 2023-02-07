@@ -3,6 +3,7 @@
   "scripts": {
     "install-all": "lerna exec -- yarn --force && cd demo && yarn --force",
     "build": "yarn build:core && yarn build:editor && yarn build:extensions",
+    "dev-all": "yarn dev:core && yarn dev:editor && yarn dev:extensions",
     "pack-all": "yarn pack:core && yarn pack:editor && yarn pack:extensions",
     "pack:core": "cd packages/easy-email-core && yarn pack",
     "pack:editor": "cd packages/easy-email-editor && yarn pack",
@@ -10,6 +11,9 @@
     "build:core": "cd packages/easy-email-core && yarn build",
     "build:editor": "cd packages/easy-email-editor && yarn build",
     "build:extensions": "cd packages/easy-email-extensions && yarn build",
+    "dev:core": "cd packages/easy-email-core && yarn dev",
+    "dev:editor": "cd packages/easy-email-editor && yarn dev",
+    "dev:extensions": "cd packages/easy-email-extensions && yarn dev",
     "dev": "cd demo && yarn dev",
     "demo": "cd demo && yarn build",
     "test": "cd packages/easy-email-core && yarn test",
