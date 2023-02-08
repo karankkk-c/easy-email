@@ -1,3 +1,6 @@
+// node_modules/mymodule/src/index.js
+export { default as ReactFromModule } from 'react';
+
 // export components
 export * from './components/Provider/EmailEditorProvider';
 
